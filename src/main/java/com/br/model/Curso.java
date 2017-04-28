@@ -33,6 +33,9 @@ public class Curso {
 	private float fValCur;
 	
 	@Column(nullable=false, length=70)
+	private float fAvaCur;
+	
+	@Column(nullable=false, length=70)
 	@NotNull(message="O campo nome não pode ficar vazio")
 	@NotEmpty(message="O campo nome não pode ficar vazio")
 	private String sNomCur;
@@ -66,11 +69,12 @@ public class Curso {
 		super();
 	}
 
-	public Curso(Integer iCodCur, float fValCur, String sNomCur, String sDesCur, Date dDatCur, Date dTemEst,
-			String photo, boolean bStaCur, Set<Usuario> cursadoPor, List<Atividade> atividades) {
+	public Curso(Integer iCodCur, float fValCur, float fAvaCur, String sNomCur, String sDesCur, Date dDatCur,
+			Date dTemEst, String photo, boolean bStaCur, Set<Usuario> cursadoPor, List<Atividade> atividades) {
 		super();
 		this.iCodCur = iCodCur;
 		this.fValCur = fValCur;
+		this.fAvaCur = fAvaCur;
 		this.sNomCur = sNomCur;
 		this.sDesCur = sDesCur;
 		this.dDatCur = dDatCur;
@@ -95,6 +99,14 @@ public class Curso {
 
 	public void setfValCur(float fValCur) {
 		this.fValCur = fValCur;
+	}
+
+	public float getfAvaCur() {
+		return fAvaCur;
+	}
+
+	public void setfAvaCur(float fAvaCur) {
+		this.fAvaCur = fAvaCur;
 	}
 
 	public String getsNomCur() {
@@ -160,6 +172,18 @@ public class Curso {
 	public void setAtividades(List<Atividade> atividades) {
 		this.atividades = atividades;
 	}
+
+	@Override
+	public String toString() {
+		return "Curso [iCodCur=" + iCodCur + ", fValCur=" + fValCur + ", fAvaCur=" + fAvaCur + ", sNomCur=" + sNomCur
+				+ ", sDesCur=" + sDesCur + ", dDatCur=" + dDatCur + ", dTemEst=" + dTemEst + ", photo=" + photo
+				+ ", bStaCur=" + bStaCur + ", cursadoPor=" + cursadoPor + ", atividades=" + atividades + "]";
+	}
+	
+	
+
+
+	
 	
 	
 	
